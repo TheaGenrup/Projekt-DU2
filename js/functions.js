@@ -204,6 +204,14 @@ function create_programme(programme) {
     NO RETURN VALUE
  
   */
+  const programme_parent = document.querySelector("#programmes > ul");
+
+  const programme_dom = document.createElement("div");
+  programme_dom.classList.add("programme");
+  programme_parent.append(programme_dom);
+
+  const random_number = get_random_number(CITIES[UNIVERSITIES[programme.universityID].cityID].imagesNormal.length, 0);
+  programme_dom.style.backgroundImage = `url(./media/geo_images/${CITIES[UNIVERSITIES[programme.universityID].cityID].imagesNormal[random_number]})`;
 
 }
 

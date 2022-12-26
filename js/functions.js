@@ -225,7 +225,7 @@ function create_programme(programme) {
   <p>${CITIES[UNIVERSITIES[programme.universityID].cityID].name}, 
 ${COUNTRIES[CITIES[UNIVERSITIES[programme.universityID].cityID].countryID].name}  </p>
 <p>${LEVELS[programme.levelID - 1].name}, ${SUBJECTS[programme.subjectID].name}, ${LANGUAGES[programme.languageID].name}</p>
-<p></p>
+<p></p>`
 }
 
 

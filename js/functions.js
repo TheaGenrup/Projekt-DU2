@@ -213,6 +213,19 @@ function create_programme(programme) {
   const random_number = get_random_number(CITIES[UNIVERSITIES[programme.universityID].cityID].imagesNormal.length, 0);
   programme_dom.style.backgroundImage = `url(./media/geo_images/${CITIES[UNIVERSITIES[programme.universityID].cityID].imagesNormal[random_number]})`;
 
+  const first_content_div = document.createElement("div");
+  const second_content_div = document.createElement("div");
+  second_content_div.classList.add("bottom_programme")
+  programme_dom.append(first_content_div);
+  programme_dom.append(second_content_div);
+
+  first_content_div.innerHTML = `
+  <p><b>${programme.name}</b></p>
+  <p>${UNIVERSITIES[programme.universityID].name}</p>
+  <p>${CITIES[UNIVERSITIES[programme.universityID].cityID].name}, 
+${COUNTRIES[CITIES[UNIVERSITIES[programme.universityID].cityID].countryID].name}  </p>
+<p>${LEVELS[programme.levelID - 1].name}, ${SUBJECTS[programme.subjectID].name}, ${LANGUAGES[programme.languageID].name}</p>
+<p></p>
 }
 
 

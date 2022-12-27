@@ -226,6 +226,12 @@ function create_programme(programme) {
 ${COUNTRIES[CITIES[UNIVERSITIES[programme.universityID].cityID].countryID].name}  </p>
 <p>${LEVELS[programme.levelID - 1].name}, ${SUBJECTS[programme.subjectID].name}, ${LANGUAGES[programme.languageID].name}</p>
 <p></p>`
+
+  second_content_div.innerHTML = `
+<p>${CITIES[UNIVERSITIES[programme.universityID].cityID].name},
+ sun-index: ${CITIES[UNIVERSITIES[programme.universityID].cityID].sun}
+ (${percenter(CITIES[UNIVERSITIES[programme.universityID].cityID].sun, 365)}%)
+</p>`;
 }
 
 

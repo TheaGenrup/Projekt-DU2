@@ -1,4 +1,3 @@
-
 // G
 // CODE According to specification
 function click_filter_element(event) {
@@ -106,6 +105,23 @@ function toggle_cities(event) {
 //            create_countries_cities_filters, create_country and create_city
 function create_countries_cities_filters() {
   function create_country(country) {
+    /* 
+    ARGUMENTS
+    This function takes one argument: country. No control is made of the argument.
+  
+    SIDE-EFFECTS
+    Creates a new div with the classes "country" and "filter_container" and an id based on the object's key "id". 
+    Appends to the ul in the country-filter container.
+    Sets innerHTML that includes an <h1> that contains the name of the current country and a <ul> with the class "filter_list".
+
+    Creates a variable "cities" that contains an array of all the cities that have the countryID as the countries id.
+
+   Loop through the array in "cities" and call create_city
+
+
+    NO RETURN VALUE
+    */
+
     const dom = document.createElement("div");
     dom.classList.add("country");
     dom.classList.add("filter_container");

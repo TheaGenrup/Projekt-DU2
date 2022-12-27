@@ -225,7 +225,7 @@ function create_programme(programme) {
   <p>${CITIES[UNIVERSITIES[programme.universityID].cityID].name}, 
 ${COUNTRIES[CITIES[UNIVERSITIES[programme.universityID].cityID].countryID].name}  </p>
 <p>${LEVELS[programme.levelID - 1].name}, ${SUBJECTS[programme.subjectID].name}, ${LANGUAGES[programme.languageID].name}</p>
-<p></p>
+<p></p>`
 }
 
 
@@ -247,6 +247,16 @@ function update_programmes() {
  
   */
 
+  document.querySelector("#programmes > ul").innerHTML = "";
+
+  const text_for_no_programmes = document.querySelector("#programmes.container > p");
+
+  text_for_no_programmes.classList.add("display_none");
+  if (read_filters().length === 0) {
+    text_for_no_programmes.classList.remove("display_none");
+  }
+
+  array_each(read_filters(), create_programme);
 }
 
 

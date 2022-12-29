@@ -104,6 +104,18 @@ function toggle_cities(event) {
 // ATTENTION: You need to write the specification of all three functions:
 //            create_countries_cities_filters, create_country and create_city
 function create_countries_cities_filters() {
+
+  /* 
+  NO ARGUMENTS
+
+  SIDE-EFFECTS 
+  This function creates two functions: create_country and create_city. 
+  Loop through the array COUNTRIES and for every iteration call the function create_country.
+
+  NO RETURN VALUE
+
+  */
+
   function create_country(country) {
     /* 
     ARGUMENTS
@@ -141,7 +153,16 @@ function create_countries_cities_filters() {
     array_each(cities, create_city);
   }
   function create_city(city) {
-
+    /* 
+    ARGUMENTS
+    City (element): One of the elements from the array "cities". No control is made.
+  
+    SIDE-EFFECTS
+    Creates a variable "dom" which calls create_filter_element with an argument (object) with the keys "parent", "class", "textContent".
+    Gives the new element an id that is equal to city.id
+  
+    NO RETURN VALUE
+    */
     const dom = create_filter_element({
       parent: document.querySelector(`#country_${city.countryID} > ul`),
       class: "selected",

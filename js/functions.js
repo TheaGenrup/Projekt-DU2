@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 function click_filter_element(event) {
 
@@ -18,7 +18,7 @@ function click_filter_element(event) {
 
   */
   event.currentTarget.classList.toggle("selected");
-  update_programmes()
+  update_programmes();
 }
 
 
@@ -196,11 +196,11 @@ function create_filters() {
   }
 
   function subject_filter(subject) {
-    create_filter(subject, document.querySelector("#subject_filter > ul"))
+    create_filter(subject, document.querySelector("#subject_filter > ul"));
   }
 
   function language_filter(language) {
-    create_filter(language, document.querySelector("#language_filter > ul"))
+    create_filter(language, document.querySelector("#language_filter > ul"));
   }
 
   array_each(LEVELS, level_filter);
@@ -242,7 +242,7 @@ function create_programme(programme) {
 
   const first_content_div = document.createElement("div");
   const second_content_div = document.createElement("div");
-  second_content_div.classList.add("bottom_programme")
+  second_content_div.classList.add("bottom_programme");
   programme_dom.append(first_content_div);
   programme_dom.append(second_content_div);
 

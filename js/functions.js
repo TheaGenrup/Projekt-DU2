@@ -291,6 +291,26 @@ function update_programmes() {
 
 function read_filters() {
 
+  /*
+  NO ARGUMENTS 
+  
+  SIDE EFFECTS
+  For every city-filter-element that is selected, call the function callback_add_cityID. The id of every selected city is pushed into the array stored in the variable city_id_selected.
+  
+  For every element in the array city_id_selected, check which universities are located in the city with the current id and push the universities (objects) to the array stored in the variable "universities".
+  
+  For every element in the array "universities", call the function "callback_add_programmes". For every element (object) in the array PROGRAMMES, check which programmes belong to the university with the current id and push the universities (objects) to the array stored in the variable "universities".
+  
+  For every filter element of level filters, language filters and subject filters that is selected, push the ids of the objects in the database that the filters refer to into an array specific to that sort of filter. 
+  For every element in the array programmes, check if programme.levelID/languageID/subjectID is present in the array for the specific filter, if so, push the programme (object) to the array programmes.
+
+  If the input value is not empty, check if the input value is present in any of the programme's names. If so, push the programme (object) to the array programmes
+  
+  
+  RETURN VALUE
+  This function returns an array (programmes) that contains all the filtered/selected programmes.
+  */
+
   const city_selected_dom = document.querySelectorAll("#country_filter li.selected");
 
   const city_id_selected = [];

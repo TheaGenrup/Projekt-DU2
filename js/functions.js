@@ -1,3 +1,4 @@
+"use strict"
 
 function click_filter_element(event) {
 
@@ -99,8 +100,8 @@ function create_countries_cities_filters() {
   NO ARGUMENTS
 
   SIDE-EFFECTS 
-  This function creates two functions: create_country and create_city. 
-  Loop through the array COUNTRIES and for every iteration call the function create_country.
+    This function creates two functions: create_country and create_city. 
+    Loop through the array COUNTRIES and for every iteration call the function create_country.
 
   NO RETURN VALUE
 
@@ -109,16 +110,16 @@ function create_countries_cities_filters() {
   function create_country(country) {
     /* 
     ARGUMENTS
-    This function takes one argument: country. No control is made of the argument.
+      This function takes one argument: country. No control is made of the argument.
   
     SIDE-EFFECTS
-    Creates a new div with the classes "country" and "filter_container" and an id based on the object's key "id". 
-    Appends to the ul in the country-filter container.
-    Sets innerHTML that includes an <h1> that contains the name of the current country and a <ul> with the class "filter_list".
+      Creates a new div with the classes "country" and "filter_container" and an id based on the object's key "id". 
+      Appends to the ul in the country-filter container.
+      Sets innerHTML that includes an <h1> that contains the name of the current country and a <ul> with the class "filter_list".
 
-    Creates a variable "cities" that contains an array of all the cities that have the countryID as the countries id.
+      Creates a variable "cities" that contains an array of all the cities that have the countryID as the countries id.
 
-   Loop through the array in "cities" and call create_city
+      Loop through the array in "cities" and call create_city
 
 
     NO RETURN VALUE
@@ -142,17 +143,19 @@ function create_countries_cities_filters() {
 
     array_each(cities, create_city);
   }
+
   function create_city(city) {
     /* 
-    ARGUMENTS
-    City (element): One of the elements from the array "cities". No control is made.
-  
-    SIDE-EFFECTS
-    Creates a variable "dom" which calls create_filter_element with an argument (object) with the keys "parent", "class", "textContent".
-    Gives the new element an id that is equal to city.id
-  
-    NO RETURN VALUE
+      ARGUMENTS
+        City (element): One of the elements from the array "cities". No control is made.
+    
+      SIDE-EFFECTS
+        Creates a variable "dom" which calls create_filter_element with an argument (object) with the keys "parent", "class", "textContent".
+        Gives the new element an id that is equal to city.id
+    
+      NO RETURN VALUE
     */
+
     const dom = create_filter_element({
       parent: document.querySelector(`#country_${city.countryID} > ul`),
       class: "selected",
@@ -168,12 +171,12 @@ function create_countries_cities_filters() {
 
 function create_filters() {
   /* 
-  NO ARGUMENTS
-  
-  SIDE EFFECTS
-  For every element (object) in the arrays LEVELS, SUBJECTS AND LANGUAGES, this function calls create_filter_element.
-  
-  NO RETURN VALUE
+    NO ARGUMENTS
+    
+    SIDE EFFECTS
+      For every element (object) in the arrays LEVELS, SUBJECTS AND LANGUAGES, this function calls create_filter_element.
+    
+    NO RETURN VALUE
   */
 
   function create_filter(object, parent) {
@@ -210,7 +213,6 @@ function create_filters() {
 function create_programme(programme) {
 
   /*
- 
     ARGUMENT
       programme (object): One of the objects from PROGRAMMES
  
@@ -227,8 +229,8 @@ function create_programme(programme) {
       G:  The "see more" element is not required. And that information needs not be in place.
  
     NO RETURN VALUE
- 
   */
+
   const programme_parent = document.querySelector("#programmes > ul");
 
   const programme_dom = document.createElement("div");
@@ -295,20 +297,20 @@ function read_filters() {
   NO ARGUMENTS 
   
   SIDE EFFECTS
-  For every city-filter-element that is selected, call the function callback_add_cityID. The id of every selected city is pushed into the array stored in the variable city_id_selected.
-  
-  For every element in the array city_id_selected, check which universities are located in the city with the current id and push the universities (objects) to the array stored in the variable "universities".
-  
-  For every element in the array "universities", call the function "callback_add_programmes". For every element (object) in the array PROGRAMMES, check which programmes belong to the university with the current id and push the universities (objects) to the array stored in the variable "universities".
-  
-  For every filter element of level filters, language filters and subject filters that is selected, push the ids of the objects in the database that the filters refer to into an array specific to that sort of filter. 
-  For every element in the array programmes, check if programme.levelID/languageID/subjectID is present in the array for the specific filter, if so, push the programme (object) to the array programmes.
+    For every city-filter-element that is selected, call the function callback_add_cityID. The id of every selected city is pushed into the array stored in the variable city_id_selected.
+    
+    For every element in the array city_id_selected, check which universities are located in the city with the current id and push the universities (objects) to the array stored in the variable "universities".
+    
+    For every element in the array "universities", call the function "callback_add_programmes". For every element (object) in the array PROGRAMMES, check which programmes belong to the university with the current id and push the universities (objects) to the array stored in the variable "universities".
+    
+    For every filter element of level filters, language filters and subject filters that is selected, push the ids of the objects in the database that the filters refer to into an array specific to that sort of filter. 
+    For every element in the array programmes, check if programme.levelID/languageID/subjectID is present in the array for the specific filter, if so, push the programme (object) to the array programmes.
 
-  If the input value is not empty, check if the input value is present in any of the programme's names. If so, push the programme (object) to the array programmes
-  
+    If the input value is not empty, check if the input value is present in any of the programme's names. If so, push the programme (object) to the array programmes
+    
   
   RETURN VALUE
-  This function returns an array (programmes) that contains all the filtered/selected programmes.
+    This function returns an array (programmes) that contains all the filtered/selected programmes.
   */
 
   const city_selected_dom = document.querySelectorAll("#country_filter li.selected");

@@ -1,5 +1,4 @@
-// G
-// CODE According to specification
+
 function click_filter_element(event) {
 
   /*
@@ -22,8 +21,6 @@ function click_filter_element(event) {
 }
 
 
-// G
-// CODE according to specification
 function create_filter_element(data) {
 
   /*
@@ -57,8 +54,6 @@ function create_filter_element(data) {
 }
 
 
-// VG
-// CODE according to specification
 function add_group_toggling(filter_container_dom) {
 
   /*
@@ -79,8 +74,6 @@ function add_group_toggling(filter_container_dom) {
 }
 
 
-// VG
-// CODE according to specifications
 function toggle_cities(event) {
 
   /*
@@ -100,9 +93,6 @@ function toggle_cities(event) {
 }
 
 
-// WRITE SPECIFICATION
-// ATTENTION: You need to write the specification of all three functions:
-//            create_countries_cities_filters, create_country and create_city
 function create_countries_cities_filters() {
 
   /* 
@@ -176,11 +166,6 @@ function create_countries_cities_filters() {
 }
 
 
-// G
-// ABSTRACT AND WRITE SPECIFICATION
-//    As you can see, all three functions below do basically the same thing.
-//    Abstract them to one function, and write the specification of that function.
-
 function create_filters() {
   /* 
   NO ARGUMENTS
@@ -222,8 +207,6 @@ function create_filters() {
 }
 
 
-// G / VG (see details in specification)
-// CODE according to specifications
 function create_programme(programme) {
 
   /*
@@ -276,8 +259,6 @@ ${COUNTRIES[CITIES[UNIVERSITIES[programme.universityID].cityID].countryID].name}
 }
 
 
-// G
-// CODE according to the specification
 function update_programmes() {
 
   /*
@@ -307,13 +288,7 @@ function update_programmes() {
 }
 
 
-// G
-// WRITE SPECIFICATION
-// You must understand how this function works. There will be questions about it
-// in the code review (kodredovisning)
 
-// Optional VG: Which parts of the function's code could be abstracted?
-//              Implement it
 function read_filters() {
 
   const city_selected_dom = document.querySelectorAll("#country_filter li.selected");

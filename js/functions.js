@@ -180,40 +180,45 @@ function create_countries_cities_filters() {
 // ABSTRACT AND WRITE SPECIFICATION
 //    As you can see, all three functions below do basically the same thing.
 //    Abstract them to one function, and write the specification of that function.
-function create_levels_filter() {
-  function create_level(level) {
+
+function create_filters() {
+  /* 
+  NO ARGUMENTS
+  
+  SIDE EFFECTS
+  For every element (object) in the arrays LEVELS, SUBJECTS AND LANGUAGES, this function calls create_filter_element.
+  
+  NO RETURN VALUE
+  */
+
+  function create_filter(object, parent) {
+
     const dom = create_filter_element({
-      parent: document.querySelector("#level_filter > ul"),
+      parent: parent,
       class: "selected",
-      textContent: level.name,
+      textContent: object.name,
     });
-    dom.dataset.id = level.id;
+
+    dom.dataset.id = object.id;
+
   }
-  array_each(LEVELS, create_level);
-}
-// Create Subjects Filter
-function create_subjects_filter() {
-  function create_subject(subject) {
-    const dom = create_filter_element({
-      parent: document.querySelector("#subject_filter > ul"),
-      class: "selected",
-      textContent: subject.name,
-    });
-    dom.dataset.id = subject.id;
+
+  function level_filter(level) {
+    create_filter(level, document.querySelector("#level_filter > ul"));
   }
-  array_each(SUBJECTS, create_subject);
-}
-// Create Search Field
-function create_language_filter() {
-  function create_element(data) {
-    const dom = create_filter_element({
-      parent: document.querySelector("#language_filter > ul"),
-      class: "selected",
-      textContent: data.name,
-    });
-    dom.dataset.id = data.id;
+
+  function subject_filter(subject) {
+    create_filter(subject, document.querySelector("#subject_filter > ul"))
   }
-  array_each(LANGUAGES, create_element);
+
+  function language_filter(language) {
+    create_filter(language, document.querySelector("#language_filter > ul"))
+  }
+
+  array_each(LEVELS, level_filter);
+  array_each(SUBJECTS, subject_filter);
+  array_each(LANGUAGES, language_filter);
+
 }
 
 

@@ -8,8 +8,7 @@ function click_filter_element(event) {
 
     SIDE-EFFECTS
       Marks the clicked filter element as selected / unselected.
-      Since a filter element will have changed after the click, the list of
-      programmes must be updated.
+      Since a filter element will have changed after the click, the list of programmes must be updated.
 
       Attention VG
         Careful with the propagation of the click-event
@@ -119,7 +118,7 @@ function create_countries_cities_filters() {
 
       Creates a variable "cities" that contains an array of all the cities that have the countryID as the countries id.
 
-      Loop through the array in "cities" and call create_city
+      Loop through the array in "cities" and call create_city.
 
 
     NO RETURN VALUE
@@ -151,7 +150,7 @@ function create_countries_cities_filters() {
     
       SIDE-EFFECTS
         Creates a variable "dom" which calls create_filter_element with an argument (object) with the keys "parent", "class", "textContent".
-        Gives the new element an id that is equal to city.id
+        Gives the new element an id that is equal to city.id.
     
       NO RETURN VALUE
     */
@@ -250,14 +249,13 @@ function create_programme(programme) {
   <p><b>${programme.name}</b></p>
   <p>${UNIVERSITIES[programme.universityID].name}</p>
   <p>${CITIES[UNIVERSITIES[programme.universityID].cityID].name}, 
-${COUNTRIES[CITIES[UNIVERSITIES[programme.universityID].cityID].countryID].name}  </p>
-<p>${LEVELS[programme.levelID - 1].name}, ${SUBJECTS[programme.subjectID].name}, ${LANGUAGES[programme.languageID].name}</p>
-<p></p>`
+  ${COUNTRIES[CITIES[UNIVERSITIES[programme.universityID].cityID].countryID].name}</p>
+  <p>${LEVELS[programme.levelID - 1].name}, ${SUBJECTS[programme.subjectID].name}, ${LANGUAGES[programme.languageID].name}</p>`;
+
   second_content_div.innerHTML = `
-<p>${CITIES[UNIVERSITIES[programme.universityID].cityID].name},
- sun-index: ${CITIES[UNIVERSITIES[programme.universityID].cityID].sun}
- (${percenter(CITIES[UNIVERSITIES[programme.universityID].cityID].sun, 365)}%)
-</p>`;
+  <p>${CITIES[UNIVERSITIES[programme.universityID].cityID].name},
+  sun-index: ${CITIES[UNIVERSITIES[programme.universityID].cityID].sun}
+  (${percenter(CITIES[UNIVERSITIES[programme.universityID].cityID].sun, 365)}%)</p>`;
 }
 
 
